@@ -19,15 +19,27 @@ class Arkanoid:
             records
         ]
 
+        # Escrito de forma abreviada
+        # self.escenas = [
+        #     Portada(self.pantalla),
+        #     Partida(self.pantalla),
+        #     MejoresJugadores(self.pantalla)
+        # ]
+
     def jugar(self):
+        # FIXME: evitar que el programa se cierre después de la pantalla de mejores jugadores
         for escena in self.escenas:
             he_acabado = escena.bucle_principal()
             if he_acabado:
+                print('La escena me pide que acabe el juego')
                 break
+            # guardar estado actual
+        print('He salido del bucle for de las escenas')
 
         pg.quit()
 
 
 if __name__ == '__main__':
+    print('Arrancamos desde el archivo game.py')
     juego = Arkanoid()
     juego.jugar()
